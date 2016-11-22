@@ -1,0 +1,39 @@
+<br>
+<div class="container-fluid">
+  <div class="jumbotron">
+    <p id="notice"><%= notice %></p>
+
+    <center>
+        <h1 class="display-4 ">Sonidos</h1>
+    </center>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Duración</th>
+      <th>Formato</th>
+      <th>Tipo de sonido</th>
+      <th>Sonido</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sounds.each do |sound| %>
+      <tr>
+        <td><%= sound.duracion %> segundos</td>
+        <td><%= sound.formato %></td>
+        <td><%= sound.type_sound.try(:nombre) %></td>
+        <td><%= link_to "<i class='fa fa-headphones fa-2x'></i>".html_safe, sound.sonido.url, :class => "play", target: '_blank' %></td>
+        <td><%= link_to "<i class='fa fa-pencil fa-2x'></i>".html_safe, edit_sound_path(sound) %></td>
+        <td><%= link_to "<i class='fa fa-eraser fa-2x'></i>".html_safe, sound, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar', new_sound_path %>
+  </div>
+
+</div>

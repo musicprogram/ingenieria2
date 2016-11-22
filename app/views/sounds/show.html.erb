@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Duracion:</strong>
+  <%= @sound.duracion %>
+</p>
+
+<p>
+  <strong>Formato:</strong>
+  <%= @sound.formato %>
+</p>
+
+<p>
+  <strong>Type sound:</strong>
+  <%= @sound.type_sound %>
+</p>
+
+<%= link_to 'Edit', edit_sound_path(@sound) %> |
+<%= link_to 'Back', sounds_path %>

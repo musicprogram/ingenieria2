@@ -1,0 +1,34 @@
+<br>
+<div class="container-fluid">
+  <div class="jumbotron">
+  <p id="notice"><%= notice %></p>
+
+<center>
+  <h1>Categorías de sonidos</h1>
+</center>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @type_sounds.each do |type_sound| %>
+      <tr>
+        <td><%= type_sound.nombre %></td>
+        <td><%= link_to "<i class='fa fa-pencil fa-2x'></i>".html_safe, edit_type_sound_path(type_sound) %></td>
+        <td><%= link_to "<i class='fa fa-eraser fa-2x'></i>".html_safe, type_sound, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar', new_type_sound_path %>
+
+  </div>
+</div>

@@ -1,0 +1,60 @@
+
+
+<div class="jumbotron">
+  <%= form_for(@sound) do |f| %>
+  <% if @sound.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sound.errors.count, "error") %> no es el formato que necesita el sonido:</h2>
+
+      <ul>
+      <% @sound.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :duracion, 'duración segundos' %><br>
+    <%= f.number_field :duracion , class:'form-control' , required:true%>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :formato, 'Formato' %><br>
+    <%= f.text_field :formato , class:'form-control' , required:true%>
+  </div>
+
+  
+  
+  <% if @ver == true %>
+    <div class="field">
+      <%= f.label :sonido %><br>
+      <%= f.file_field :sonido, class:'form-control' %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= f.label :sonido %><br>
+      <%= f.file_field :sonido, class:'form-control', required:true %>
+    </div>
+    
+  <% end %>
+  <div class="field">
+      <%= f.label :type_sound_id, 'Tipo de sonido' %><br>
+      <%= f.collection_select :type_sound_id, TypeSound.all, :id, :nombre, {prompt: "Seleccion Categoría"}, {:required => true, class: "form-control"} %>
+  </div>
+    
+    
+  
+  <div class="actions">
+    <%= f.submit 'Guardar', class:'btn btn-default btn-lg btn-block' %>
+  </div>
+<% end %>
+
+
+
+</div>
+
+
+

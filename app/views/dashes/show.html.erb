@@ -1,0 +1,23 @@
+<div class="container">
+  
+<p id="notice"><%= notice %></p>
+
+
+
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title fuente_b"><%= @dash.titulo %></h4>
+    <h6 class="card-subtitle text-muted fuente_b"> <%= @dash.persona %></h6>
+  </div>
+  <%=  image_tag(@dash.imagen, class:'Card image img-responsive')%>
+
+  <div class="card-block">
+    <p class="card-text fuente_b"><%= @dash.descripcion %></p>
+  </div>
+</div>
+
+
+
+<%= link_to 'Editar', edit_dash_path(@dash) %> |
+<%= link_to 'Atras', dashes_path %>
+</div>

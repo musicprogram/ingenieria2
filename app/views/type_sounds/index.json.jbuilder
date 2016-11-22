@@ -1,0 +1,1 @@
+json.array! @type_sounds, partial: 'type_sounds/type_sound', as: :type_sound

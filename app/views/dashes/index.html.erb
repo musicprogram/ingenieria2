@@ -1,0 +1,44 @@
+
+
+<br>
+<div class="container-fluid">
+  <div class="jumbotron">
+    <p id="notice"><%= notice %></p>
+<center>
+        <h1 class="display-4 ">Guiones</h1>
+    </center>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Persona</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dashes.each do |dash| %>
+      <tr>
+        <td><%= dash.titulo %></td>
+        <td><%= dash.persona %></td>
+        <td><%= link_to "<i class='fa fa-eye fa-2x'></i>".html_safe, dash %></td>
+        <td><%= link_to "<i class='fa fa-pencil fa-2x'></i>".html_safe, edit_dash_path(dash) %></td>
+        <td><%= link_to "<i class='fa fa-eraser fa-2x'></i>".html_safe, dash, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar', new_dash_path %>
+
+    
+  </div>
+</div>
+
+
+
+

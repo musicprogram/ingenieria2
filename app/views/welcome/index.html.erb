@@ -1,0 +1,61 @@
+<style>
+    
+.bg {
+  position: absolute;
+  top: 0;left: 0;
+  height: 100%;
+  width: 100%;
+  background: url("http://thomaspodgro.com/crea/lbc-demo/bg.jpg") no-repeat center center;
+  background-size: 1920px;
+  overflow: hidden;
+}
+
+.sound-effect {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;left: 0;
+}
+
+.sound-effect span {
+  position: absolute;
+  top: 50px;bottom: 0;left: -320px;right: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  border-radius:50%;
+  border: 2px #fff solid;
+  animation: soundEffect 4s linear infinite;
+}
+.sound-effect span:nth-of-type(2) {
+  animation: soundEffect 4s linear infinite 0.5s;
+}
+.sound-effect span:nth-of-type(3) {
+  animation: soundEffect 4s linear infinite 1s;
+}
+@keyframes soundEffect {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 400px;
+    height: 800px;
+    opacity: 0;
+  }
+}
+</style>
+
+
+
+<%=  link_to sounds_path do %>
+
+    <div class="bg"></div>
+    <div class="sound-effect">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+<% end %>

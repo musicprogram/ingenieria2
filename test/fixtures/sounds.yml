@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  duracion: MyString
+  formato: MyString
+  type_sound_id: 
+
+two:
+  duracion: MyString
+  formato: MyString
+  type_sound_id: 

@@ -1,0 +1,1 @@
+json.partial! "type_sounds/type_sound", type_sound: @type_sound
